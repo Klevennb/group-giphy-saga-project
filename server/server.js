@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config();  //DO NOT FORGET!!! MAKE API KEY WORK in router url
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');

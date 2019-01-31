@@ -19,7 +19,7 @@ class Search extends Component {
         
         axios({
             method: 'GET',
-            url: `/search?q=${this.state.search}`,
+            url: `/search?q=${this.state.search}`,  //q can be anything, see router for other half
 
         }).then((response) => {
             console.log(response.data);

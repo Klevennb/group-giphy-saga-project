@@ -15,7 +15,7 @@ const axios = require('axios');
 // })
 // return all search results
 router.get('/', (req, res) => {
-    const search = req.query.q;
+    const search = req.query.q;  //q can be anything, see component for other half
 
     axios({ 
         method: 'GET',
