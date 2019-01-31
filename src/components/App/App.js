@@ -11,13 +11,10 @@ class App extends Component {
       <div>
         <header>
           <h1>Giphy Collectore</h1>
-          <button className="serach-btn">Search</button>
-          <button className="favorite-btn">Favorites</button>    
-          <br/>
-          <br/>
-          </header>    
-        <Router>
-          <div>
+          {/* <button className="serach-btn">Search</button>
+          <button className="favorite-btn">Favorites</button>     */}
+          <Router>
+          <div className="App-Paths">
             <Link to="/">Search</Link>
             <br/>
             <Link to="/favorites">Favorites</Link>
@@ -25,6 +22,7 @@ class App extends Component {
             <Route extact path="/favorites" component={Favorites} />
           </div>
         </Router>
+          </header>    
       <div>
         {/* <h1>Giphy Search!</h1> */}
       </div>
