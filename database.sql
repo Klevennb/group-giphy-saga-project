@@ -9,6 +9,11 @@ CREATE TABLE "category" (
     "name" VARCHAR (100) NOT NULL
 );
 
+CREATE TABLE "favorites" (
+    "id" SERIAL PRIMARY KEY,
+    "category_id" INT REFERENCES
+    "category", "url" TEXT);
+
 -- Default categories. You may change them :)
 INSERT INTO "category" ("name")
-VALUES ('funny'), ('vega'), ('cartoon'), ('nsfw'), ('meme');
+VALUES ('funny'), ('zaurak'), ('cartoon'), ('nsfw'), ('meme');
