@@ -7,16 +7,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router>
-          <div>
-            <Link to="/">Search</Link>
-            <Link to="/favorites">Favorites</Link>
-            <Route extact path ="/" component={Search} />
-            <Route extact path="/favorites" component={Favorites} />
-          </div>
-        </Router>
       <div>
         <h1>Giphy Search!</h1>
+          <Router>
+            <div>
+              <Link to="/">Search</Link>
+              <Link to="/favorites">Favorites</Link>
+              <Route extact path="/" component={Search} />
+              <Route extact path="/favorites" component={Favorites} />
+            </div>
+          </Router>
       </div>
       </div>
     );
