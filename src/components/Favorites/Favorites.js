@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 class Favorites extends Component{
-
+    componentDidMount(){
+        this.getFavorites();
+    }
     getFavorites = () => {
         axios({
             method: 'GET',
@@ -19,7 +21,7 @@ class Favorites extends Component{
         return(
             <div>
                 <p>
-
+                    {JSON.stringify(this.props.reduxStore)}
                 </p>
             </div>
         )
