@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import { Typography } from '@material-ui/core';
+// import FavoriteIcon from '@material-ui/icons/Favorite';\
+import FavoriteItem from './FavoriteItem.js';
+
 class Favorites extends Component{
     componentDidMount(){
         this.getFavorites();
@@ -19,11 +25,20 @@ class Favorites extends Component{
     render()
     {
         return(
-            <div>
-                <p>
-                    {JSON.stringify(this.props.reduxStore)}
-                </p>
-            </div>
+            <Card>
+                <CardActions>
+                    <Typography>
+                    {/* {JSON.stringify(this.props.reduxStore.favoriteList)} */}
+                    {this.props.reduxStore.favoriteList.map((favorite)=> {
+                        return (
+                    <FavoriteItem key={favorite.id} favorite={favorite} />
+                        );
+                    })}
+    
+                    </Typography>
+                   
+                </CardActions>
+            </Card>  
         )
     }
 }
