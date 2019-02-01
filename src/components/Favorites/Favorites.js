@@ -12,17 +12,7 @@ class Favorites extends Component{
     componentDidMount(){
         this.getFavorites();
     }
-    getFavorites = () => {
-        axios({
-            method: 'GET',
-            url:'/api/favorite'
-        }).then((response)=>{
-            const action = {type: 'SET_FAVORITES', payload: response.data}
-            this.props.dispatch(action);
-        }).catch((error)=>{
-            console.log('erorr in get', error);
-        })
-    }
+    
 
     // makeFavorite = () =>{
     //     let image = this.props.reduxStore.favoriteList
@@ -43,17 +33,13 @@ class Favorites extends Component{
                     {/* {JSON.stringify(this.props.reduxStore.favoriteList)} */}
                     {this.props.reduxStore.favoriteList.map((favorite)=> {
                         return (
-                    <FavoriteItem key={favorite.id} favorite={favorite} />
+                            <div><img src={favorite.images.fixed_width.url} /></div>
                         );
                     })}
                     </Typography>
-<<<<<<< HEAD
-                
-=======
                     <CardActions>
 
                 </CardActions>
->>>>>>> feature-button
             </Card>  
 
         )

@@ -9,16 +9,16 @@ import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* rootSaga(){
-// yield takeEvery('GET_FAVORITES', getFavorites )
-// }
+yield takeEvery('GET_FAVORITES', getFavorites )
+}
 
-// function* getFavorites(action){
-//     try{
-//         const serverResponse = yield axios.get('/api/favorites')
-//     }catch(error){
-//         console.log(error,'in get favorites');
+function* getFavorites(action){
+    try{
+        const serverResponse = yield axios.get('/api/favorites')
+    }catch(error){
+        console.log(error,'in get favorites');
         
-//     }
+    }
 }
 
 const favoriteList = (state = [], action) =>{
