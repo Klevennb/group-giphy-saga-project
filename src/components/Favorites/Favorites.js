@@ -48,9 +48,7 @@ class Favorites extends Component{
                     })}
                     </Typography>
                     <CardActions>
-                    <IconButton onClick="addToFavorite">
-                        
-                    </IconButton>
+
                 </CardActions>
             </Card>  
 
