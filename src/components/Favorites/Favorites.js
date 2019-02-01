@@ -47,7 +47,13 @@ class Favorites extends Component{
                         );
                     })}
                     </Typography>
+<<<<<<< HEAD
                 
+=======
+                    <CardActions>
+
+                </CardActions>
+>>>>>>> feature-button
             </Card>  
 
         )
