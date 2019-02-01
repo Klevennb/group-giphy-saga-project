@@ -1,11 +1,28 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-class FavoriteItem extends Component {
+class SearchResults extends Component {
+    appendToDOM =() => {
+        return this.props.reduxStore.searchList.map((result)=>{
+            console.log('!!!!!!', result.images.fixed_width.url);
+            
+            return <img src={result.images.fixed_width.url} />
+            // return <h1>Hi</h1>;
+                                    
+        })
+    }
+        
 
+// {this.props.reduxState.plantList.map((plant)=>{
+//                         return <PlantRow key={plant.id} plant={plant} />
+//                         }
     render(){
         return (
-            // <span>this will be the search results index return</span>
+            <div>
+            search results
+                {this.appendToDOM()}
+            </div>
+            // <span>thisill bethe search results index return</span>
         );
     }
 
@@ -15,4 +32,4 @@ const mapStoreToProps = reduxStore => ({
     reduxStore,
 })
 
-export default connect(mapStoreToProps)(FavoriteItem);
+export default connect(mapStoreToProps)(SearchResults);
