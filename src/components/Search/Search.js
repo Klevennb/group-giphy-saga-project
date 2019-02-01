@@ -1,52 +1,70 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios';
-class Search extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            search: '',
-        }
-    }
-    changeState = (event) => {
-        this.setState({
-            search: event.target.value
-        })    
-    }
-    sendToServer = () => {
-        
-        
-        
-        axios({
-            method: 'GET',
-            url: `/search?q=${this.state.search}`,  //q can be anything, see router for other half
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import axios from "axios";
+// import axios from 'axios';
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import { Typography } from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
 
-        }).then((response) => {
-            console.log(response.data);
-            const action = {type:'SET_SEARCH',
-                            payload:response.data,
-                            }
-            this.props.dispatch(action);
-            console.log(action);
-            console.log(this.props.reduxStore.searchList);
-            
-        }).catch ((error) => {
-            console.log('Error in Get client', error);
-            // response.sendStatus(500);
-        })
-    }
-    render() {
-        return (
-            <div>
-                <input onChange={this.changeState} type='text' value={this.state.search}></input>
-                <button onClick={this.sendToServer}>Search</button>
-            </div>
-        )
-    }
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: ""
+    };
+  }
+  changeState = event => {
+    this.setState({
+      search: event.target.value
+    });
+  };
+  sendToServer = () => {
+    axios({
+      method: "GET",
+      url: `/search?q=${this.state.search}` //q can be anything, see router for other half
+    })
+      .then(response => {
+        console.log(response.data);
+        const action = { type: "SET_SEARCH", payload: response.data };
+        this.props.dispatch(action);
+        console.log(action);
+        console.log(this.props.reduxStore.searchList);
+      })
+      .catch(error => {
+        console.log("Error in Get client", error);
+        // response.sendStatus(500);
+      });
+  };
+  render() {
+    return (
+      <div>
+        <input
+          onChange={this.changeState}
+          type="text"
+          value={this.state.search}
+        />
+        <button onClick={this.sendToServer}>Search</button>
+        <Card>
+          <Typography>
+            {/* {JSON.stringify(this.props.reduxStore.favoriteList)} */}
+            {/* {this.props.reduxStore.favoriteList.map((favorite)=> {
+                        return (
+                    <FavoriteItem key={favorite.id} favorite={favorite} />
+                        );
+                    })} */}
+          </Typography>
+          <CardActions>
+            <IconButton onClick="addToFavorite" />
+          </CardActions>
+        </Card>
+      </div>
+    );
+  }
 }
 const mapStoreToProps = reduxStore => ({
-    reduxStore,
-})
+  reduxStore
+});
 
 export default connect(mapStoreToProps)(Search);
 
