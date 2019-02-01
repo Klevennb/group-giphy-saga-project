@@ -5,12 +5,7 @@ class FavoriteItem extends Component {
 
     render(){
         return (
-            <div>
-            <span>{this.props.favorite.url}</span>
-            <button onClick="addToFavorite">
-
-            </button>
-            </div>
+            // <span>this will be the search results index return</span>
         );
     }
 

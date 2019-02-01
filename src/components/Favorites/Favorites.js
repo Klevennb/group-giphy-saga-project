@@ -47,11 +47,13 @@ class Favorites extends Component{
                         );
                     })}
                     </Typography>
+<<<<<<< HEAD
+                
+=======
                     <CardActions>
-                    <IconButton onClick="addToFavorite">
-                        
-                    </IconButton>
+
                 </CardActions>
+>>>>>>> feature-button
             </Card>  
 
         )
