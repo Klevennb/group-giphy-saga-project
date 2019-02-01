@@ -23,9 +23,21 @@ class Favorites extends Component{
             console.log('erorr in get', error);
         })
     }
+
+    // makeFavorite = () =>{
+    //     let image = this.props.reduxStore.favoriteList
+    //     axios({
+    //         method: 'POST',
+    //         url: '/api/favorite',
+    //         data: image
+    //     }).then((response))
+    // }
+
+
     render()
     {
         return(
+
             <Card>
                     <Typography>
                     {/* {JSON.stringify(this.props.reduxStore.favoriteList)} */}
@@ -41,6 +53,7 @@ class Favorites extends Component{
                     </IconButton>
                 </CardActions>
             </Card>  
+
         )
     }
 }
