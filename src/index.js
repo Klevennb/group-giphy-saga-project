@@ -28,6 +28,13 @@ const favoriteList = (state = [], action) =>{
     return state;
 }
 
+const searchList = (state = [], action) =>{
+    if(action.type === 'SET_SEARCH'){
+        return action.payload;
+    }
+    return state;
+}
+
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
     combineReducers({

@@ -1,3 +1,4 @@
+require('dotenv').config(); //added this to get
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
@@ -19,7 +20,7 @@ router.get('/', (req, res) => {
 
     axios({ 
         method: 'GET',
-        url: `${BASE_URL}search?q=${search}&api_key=${API_KEY}&limit=1`
+        url: `${BASE_URL}search?q=${search}&api_key=${API_KEY}&limit=9`
     }).then((responseFromGiphy) => {
         console.log(responseFromGiphy.data.data);
         

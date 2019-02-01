@@ -23,6 +23,12 @@ class Search extends Component {
 
         }).then((response) => {
             console.log(response.data);
+            const action = {type:'SET_SEARCH',
+                            payload:response.data,
+                            }
+            this.props.dispatch(action);
+            console.log(action);
+            console.log(this.props.reduxStore.searchList);
             
         }).catch ((error) => {
             console.log('Error in Get client', error);
@@ -38,8 +44,11 @@ class Search extends Component {
         )
     }
 }
+const mapStoreToProps = reduxStore => ({
+    reduxStore,
+})
 
-export default connect()(Search);
+export default connect(mapStoreToProps)(Search);
 
 // const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 // const API_KEY = process.env.API_KEY;
