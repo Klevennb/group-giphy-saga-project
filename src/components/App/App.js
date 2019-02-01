@@ -28,7 +28,8 @@ class App extends Component {
 
         <div>
           {/* <h1>Giphy Search!</h1> */}
-        </div>
+
+        </div> 
 
       </div>
     );
