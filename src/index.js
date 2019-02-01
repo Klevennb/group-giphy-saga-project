@@ -39,6 +39,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
     combineReducers({
         favoriteList,
+        searchList,
     }),
     applyMiddleware(sagaMiddleware, logger),
 );

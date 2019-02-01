@@ -6,6 +6,7 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import { Typography } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
+import SearchResults from "./SearchResults";
 
 class Search extends Component {
   constructor(props) {
@@ -45,7 +46,8 @@ class Search extends Component {
           value={this.state.search}
         />
         <button onClick={this.sendToServer}>Search</button>
-        <Card>
+        <SearchResults />
+        {/* <Card>
           <Typography>
             {/* {JSON.stringify(this.props.reduxStore.favoriteList)} */}
             {/* {this.props.reduxStore.favoriteList.map((favorite)=> {
@@ -53,11 +55,11 @@ class Search extends Component {
                     <FavoriteItem key={favorite.id} favorite={favorite} />
                         );
                     })} */}
-          </Typography>
+          {/* </Typography>
           <CardActions>
             <IconButton onClick="addToFavorite" />
           </CardActions>
-        </Card>
+        {/* </Card> */}
       </div>
     );
   }
