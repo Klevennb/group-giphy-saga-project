@@ -43,6 +43,7 @@ class Search extends Component {
     }
     render() {
         return (
+            <input onChange={this.changeState} type ="text" value={this.state.search}></input>
             <Card>
                     <Typography>
                     {/* {JSON.stringify(this.props.reduxStore.favoriteList)} */}
